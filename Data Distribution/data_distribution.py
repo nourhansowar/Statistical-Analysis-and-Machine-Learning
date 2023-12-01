@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from scipy.stats import skew
 from scipy.stats import kurtosis 
+import matplotlib.pyplot as plt
+
 
 
 
@@ -64,6 +66,12 @@ def analyze_data_distibution(txt_file):
         data_distribution = "Left-skewed"
     else:
         data_distribution = "Unknown"
+    # Plot the distribution of the data
+    plt.hist(data)
+    plt.xlabel('data')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of data')
+    plt.show()
 
     return {
         "Mean": mean,
